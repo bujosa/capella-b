@@ -23,7 +23,10 @@ async function pubsubStart(
   subscriptionName = "my-sub" // Name for the new subscription to create
 ) {
   // Instantiates a client
-  const pubsub = new PubSub({ projectId });
+  const pubsub = new PubSub({
+    projectId,
+    apiEndpoint: process.env.PUB_SUB_API_ENDPOINT,
+  });
 
   // Creates a new topic
   const [topic] = await pubsub.createTopic(topicName);
