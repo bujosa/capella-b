@@ -20,6 +20,7 @@ app.post("/api/example", async (req, res) => {
   try {
     const data = req.body;
     await publishPubSubMessage("welcome-message", data);
+    res.status(200).send("Message sent to PubSub");
   } catch (e) {
     console.log(e);
     res.status(500).send(e);
