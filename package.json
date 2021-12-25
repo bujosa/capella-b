@@ -1,0 +1,24 @@
+{
+  "name": "capella-b",
+  "version": "1.0.0",
+  "description": "This is a simple project example about pubsub and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bujosa/Capella-B.git"
+  },
+  "author": "Bujosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bujosa/Capella-B/issues"
+  },
+  "homepage": "https://github.com/bujosa/Capella-B#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.3"
+  }
+}
