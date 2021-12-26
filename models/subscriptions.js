@@ -8,6 +8,8 @@ class Subscriptions {
 
   // Create my subscriptions
   initialize() {
+    // Example subcriptions related with this service capella b
+    // testing-topic-2 is a example of topic provided by other services
     createSubscription("testing-topic-2", "capella-b").catch(console.error);
   }
 
