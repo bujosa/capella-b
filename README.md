@@ -1,5 +1,5 @@
 # Capella-B
-This is a simple project example about pub-sub, jwt and nodejs
+This is a sample project on pubsub, express, jwt and middlewares.
 
 ## Available Scripts
 
@@ -16,3 +16,4 @@ in the env file, with their respective environment
 variable ``GOOGLE_APPLICATION_CREDENTIALS``
 
 Check .env.example file
+This is a sample project on pubsub, express, jwt and middlewares.
