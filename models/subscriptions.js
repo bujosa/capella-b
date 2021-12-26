@@ -18,9 +18,13 @@ class Subscriptions {
     this.pubsub
       .subscription("capella-b-testing-topic-2")
       .on("message", (message) => {
-        const { name, email } = JSON.parse(message.data.toString());
-        console.log("Name:", name);
-        console.log("Email:", email);
+        // Example extracting data for the message
+        const { your_variables } = JSON.parse(message.data.toString());
+
+        // In this part you can specify what you want to do with the message
+        // For example you can save the message in a database
+        // Or you can send an email to the user
+
         message.ack();
       });
   }
