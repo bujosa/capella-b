@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 
-const validateJWT = (req, res, next) => {
+// This middleware just validate JWT token
+const validateJWT = (req, res, next, roles = []) => {
   try {
     const token = req.header("Authorization");
 
