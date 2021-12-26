@@ -13,11 +13,10 @@ router.post(
     check("name", "Name is required").not().isEmpty(),
     check("email", "Email is required").isEmail(),
     validateFields,
+    validateJWT,
   ],
   sendMessageToWelcomeMessage
 );
-
-// router.post("/topic2", [], createUser);
 
 // Example validate JWT
 // router.get("/renew", validateJWT, renewToken);
