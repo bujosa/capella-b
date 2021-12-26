@@ -6,8 +6,7 @@ const validateJWT = (req, res, next) => {
 
     if (!token) {
       return res.status(401).json({
-        ok: false,
-        msg: "Token is empty",
+        msg: "Token is not provided",
       });
     }
 
@@ -21,7 +20,6 @@ const validateJWT = (req, res, next) => {
     next();
   } catch (e) {
     return res.status(401).json({
-      ok: false,
       msg: "The provided JWT is malformed",
     });
   }
