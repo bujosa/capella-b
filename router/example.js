@@ -12,14 +12,11 @@ router.post(
   [
     check("name", "Name is required").not().isEmpty(),
     check("email", "Email is required").isEmail(),
-    validateFields,
-    validateJWT,
+    validateFields, // Validate all fields
+    validateJWT, // Example validate JWT, if you dont want validate-jwt middleware, just remove this line
   ],
   sendMessageToWelcomeMessage
 );
-
-// Example validate JWT
-// router.get("/renew", validateJWT, renewToken);
 
 module.exports = router;
 
