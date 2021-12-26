@@ -5,8 +5,6 @@ const sendMessageToWelcomeMessage = async (req, res = response) => {
   try {
     const data = req.body;
 
-    console.log("ID", req.id);
-
     // Publish message to PubSub
     await publishPubSubMessage("welcome-message", data);
 
