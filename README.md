@@ -1,5 +1,5 @@
 # Capella-B
-This is a sample project on pubsub, express, jwt and middlewares.
+This is a sample project about pubsub, express, jwt and middlewares.
 
 ## Available Scripts
 
