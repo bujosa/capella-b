@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const { ADMIN, CLIENT } = require("../utils/user-roles");
 
-const authorizedAdmin = (req, res, next) => {
+// This middleware check if the user has the required role
+// you dont need to use validateJWT middleware
+const authorizedAdmin = function (req, res, next) {
   try {
     const token = req.header("Authorization");
 
@@ -32,9 +34,17 @@ const authorizedAdmin = (req, res, next) => {
   }
 };
 
+// This middleware check if the user has the required role if you use that
+// you dont need to use validateJWT middleware
 const authorizedClient = (req, res, next) => {
   try {
     const token = req.header("Authorization");
+
+    if (!token) {
+      return res.status(401).json({
+        msg: "Token is not provided",
+      });
+    }
 
     const payload = jwt.verify(
       token.replace("Bearer ", ""),
@@ -47,6 +57,8 @@ const authorizedClient = (req, res, next) => {
       });
     }
 
+    req.id = payload.id;
+
     next();
   } catch (e) {
     return res.status(401).json({
@@ -55,10 +67,9 @@ const authorizedClient = (req, res, next) => {
   }
 };
 
+// Verify is the role is allocated on the authorizedRoles array
 verifyRole = (userRole, authorizedRoles) => {
-  const authorizedRolesSet = new Set(authorizedRoles);
-
-  return authorizedRolesSet.has(userRole);
+  return authorizedRoles.includes(userRole);
 };
 
 module.exports = {
