@@ -1,2 +1,2 @@
 # Capella-B
-This is a simple project example about pub-sub, jwt and nodejs
+This is a sample project on pubsub, express, jwt and middlewares.
