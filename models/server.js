@@ -18,6 +18,7 @@ class Server {
     this.app.use("/api/example", require("../router/example"));
   }
 
+  // Execute server configuration
   execute() {
     this.middlewares();
     this.server.listen(this.port, () => {
