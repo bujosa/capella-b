@@ -2,10 +2,7 @@ const { Router } = require("express");
 const { check } = require("express-validator");
 const { sendMessageToWelcomeMessage } = require("../controllers/example");
 const { validateFields } = require("../middlewares/validate-fields");
-const {
-  authorizedAdmin,
-  authorizedClient,
-} = require("../middlewares/authorized-roles");
+const { authorizedAdmin } = require("../middlewares/authorized-roles");
 
 const router = Router();
 
