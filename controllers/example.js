@@ -1,6 +1,7 @@
 const { response } = require("express");
 const { publishPubSubMessage } = require("../models/pubsub");
 
+// Send pubsub message example
 const sendMessageToWelcomeMessage = async (req, res = response) => {
   try {
     const data = req.body;
