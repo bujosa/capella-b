@@ -7,7 +7,7 @@ const sendMessageToWelcomeMessage = async (req, res = response) => {
     const data = req.body;
 
     // Publish message to PubSub
-    await publishPubSubMessage("welcome-message", data);
+    await publishPubSubMessage("testing-topic-1", data);
 
     // Response status code
     res.status(200).send("Message sent to PubSub");
