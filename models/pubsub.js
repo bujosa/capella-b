@@ -1,5 +1,19 @@
 const { PubSub } = require("@google-cloud/pubsub");
-const pubsub = new PubSub();
+// First alternative
+// const pubsub = new PubSub();
+// End first alternative
+
+// Second altenative if you dont want use credentials.json path
+require("dotenv").config();
+
+const pubsub = new PubSub({
+  projectId: process.env.GOOGLE_PROJECT_ID,
+  credentials: {
+    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+    private_key: process.env.GOOGLE_PRIVATE_KEY,
+  },
+});
+// End second altenative if you dont want use credentials.json path
 
 // Publish message to PubSub
 const publishPubSubMessage = async function (topicName, data) {
