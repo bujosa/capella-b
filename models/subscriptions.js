@@ -3,7 +3,13 @@ const { createSubscription } = require("./pubsub");
 
 class Subscriptions {
   constructor() {
-    this.pubsub = new PubSub();
+    this.pubsub = new PubSub({
+      projectId: process.env.GOOGLE_PROJECT_ID,
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY,
+      },
+    });
   }
 
   // Create my subscriptions
@@ -19,6 +25,7 @@ class Subscriptions {
       .subscription("capella-b-testing-topic-2")
       .on("message", (message) => {
         // Example extracting data for the message
+        console.log("Llegando");
         const { your_variables } = JSON.parse(message.data.toString());
 
         // In this part you can specify what you want to do with the message
