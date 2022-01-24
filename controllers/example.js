@@ -6,8 +6,10 @@ const sendMessageToWelcomeMessage = async (req, res = response) => {
   try {
     const data = req.body;
 
+    // DB PROCESSING
+
     // Publish message to PubSub
-    await publishPubSubMessage("testing-topic-1", data);
+    await publishPubSubMessage("created-purchased", data);
 
     // Response status code
     res.status(200).send("Message sent to PubSub");
